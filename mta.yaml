@@ -1,0 +1,15 @@
+ID: hello_cap_no_hana
+_schema-version: "2.1"
+description: Hello World in CAP ohne HANA
+version: 0.0.1
+modules:
+  - name: hello_cap_no_hana-srv
+    type: nodejs
+    path: srv
+    parameters:
+      memory: 512M
+      disk-quota: 256M
+    provides:
+      - name: srv_api
+        properties:
+          url: ${default-url}
